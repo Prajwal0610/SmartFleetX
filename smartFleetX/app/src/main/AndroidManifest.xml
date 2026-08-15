@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Permissions for camera, audio recording, location, and storage -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    
+    <!-- SMS permission for emergency alerts -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    
+    <!-- Additional permissions for accident detection -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.camera" android:required="true" />
+    <uses-feature android:name="android.hardware.location.gps" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" android:required="true" />
+    <uses-feature android:name="android.hardware.sensor.gyroscope" android:required="false" />
+    
+    <!-- Required for SENSOR_DELAY_FASTEST on Android 12+ -->
+    <uses-permission android:name="android.permission.HIGH_SAMPLING_RATE_SENSORS" />
+    
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/img"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/img"
+        android:supportsRtl="true"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:usesCleartextTraffic="true"
+        android:theme="@style/Theme.SmartFleetX">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="YOUR_API_KEY_HERE" />
+
+        <!-- New Activities for Advanced Monitoring -->
+        <activity
+            android:name=".activity.DriverHealthMonitorActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ObstacleDetectionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.VideoPlaybackActivity"
+            android:exported="false"
+            android:theme="@style/Theme.SmartFleetX" />
+        <activity
+            android:name=".activity.IncidentAnalysisActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.MapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.ProfileActivity"
+            android:exported="false" />
+
+        <!-- Existing Activities -->
+        <activity
+            android:name=".activity.ReportIncidentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.SignupActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.DashboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.SplashActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Background Services for Accident Detection -->
+        <service
+            android:name=".service.AccidentDetector"
+            android:enabled="true"
+            android:exported="false" />
+        
+        <service
+            android:name=".service.SensorDataLogger"
+            android:enabled="true"
+            android:exported="false" />
+        
+        <service
+            android:name=".service.EmergencyAlertManager"
+            android:enabled="true"
+            android:exported="false" />
+        
+        <service
+            android:name=".service.SystemHealthMonitor"
+            android:enabled="true"
+            android:exported="false" />
+            
+        <activity
+            android:name=".activity.SystemHealthActivity"
+            android:exported="false" />
+            
+        <activity
+            android:name=".activity.AnalyticsDashboardActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.DataSharingActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".activity.HardwareControlActivity"
+            android:exported="false" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths" />
+        </provider>
+    </application>
+
+</manifest>

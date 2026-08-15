@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Base Colors -->
+    <color name="black">#FFFFFF</color> <!-- Inverted for specific uses if needed, but usually we use specific keys -->
+    <color name="white">#121212</color> <!-- Soft dark background -->
+    
+    <!-- Primary Blue (Adjusted for Dark Mode) -->
+    <color name="md_theme_primary">#90CAF9</color>
+    <color name="md_theme_primary_dark">#1976D2</color>
+    <color name="md_theme_primary_light">#1E3A5F</color>
+    
+    <!-- Secondary Blue Shades -->
+    <color name="md_theme_secondary">#64B5F6</color>
+    <color name="blue_accent">#81D4FA</color>
+    
+    <!-- Dark Backgrounds -->
+    <color name="md_theme_background_start">#121212</color>
+    <color name="md_theme_background_end">#1E1E1E</color>
+    <color name="surface_card">#1E1E1E</color>
+    <color name="surface_light">#2C2C2C</color>
+    <color name="divider_light">#383838</color>
+    
+    <!-- Light Text for Dark Mode -->
+    <color name="text_primary">#E1E1E1</color>
+    <color name="text_secondary">#B0B0B0</color>
+    <color name="text_hint">#808080</color>
+    
+    <!-- Status Colors (Material Dark variants) -->
+    <color name="error">#CF6679</color>
+    <color name="success">#81C784</color>
+    <color name="warning">#FFB74D</color>
+</resources>

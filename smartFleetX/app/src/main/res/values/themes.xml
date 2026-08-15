@@ -1,0 +1,22 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.SmartFleetX" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+    <style name="Theme.SmartFleetX" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/md_theme_primary</item>
+        <item name="colorSecondary">@color/md_theme_secondary</item>
+        <item name="android:statusBarColor">@color/md_theme_primary</item>
+        <item name="materialCardViewStyle">@style/Widget.MaterialComponents.CardView</item>
+        <item name="android:windowBackground">@drawable/bg_gradient</item>
+        <!-- Use Material shape theming if you want -->
+    </style>
+
+    <style name="Theme.SmartFleetX.Splash" parent="Theme.SmartFleetX">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@drawable/bg_gradient</item>
+    </style>
+
+
+</resources>
